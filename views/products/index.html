@@ -1,0 +1,46 @@
+﻿<!--Place for Slider-->
+<h3 style="margin:0 0 10px 0; padding:5px 0 5px 40px;"><a href="/products/" style="text-decoration:none; color:black;" >All Products</a>
+<?php if( isset($_GET['category']) ) { ?>
+	<span style="font-size:16px;"><?php echo "&gt; ".ucfirst($_GET['category']);?></span>
+<?php } ?>
+
+</h3>
+
+<div id="left" style="float:left; width:190px; padding:10px; margin:0 5px;" >
+	<h5 style="margin:0; padding-bottom:10px; border-bottom:1px dotted grey; font-weight:bold;">Categories of products</h5>
+	<ul style="padding:10px 15px;">
+		<li style="disdlay: block;" ><a href="/products/index?category=notebooks">Noteboks</a></li>
+		<li><a href="/products/index?category=smartphones">Smartphones</a></li>
+		<li><a href="/products/index?category=phones">Phones</a></li>
+		<li><a href="/products/index?category=tablets">Tablets</a></li>
+		<li><a href="/products/index?category=readers">E-book Readers</a></li>
+	</ul>
+
+</div>
+
+<div id="right" style="width:190px; float:right; margin:0 5px; padding:10px;">
+<p>Ghbdtnb rfr</p>
+</div>
+
+<div id="center" style="margin:0 200px; padding:0 10px; border-left:1px solid grey;">
+
+<table width="100%" >
+	<?php foreach($data["goods"] as $good_data){ ?>
+	<tr >
+		<table width="100%" style="border-bottom:1px dotted grey">
+			<tr>
+				<td rowspan="2 "style="width:15%; text-align:center" ><a href="/products/view/<?php echo $good_data['id']?>"><img src="<?php echo $good_data['foto']?>" height="80" ></a><td>
+				<td style="align:left; padding:0px 10px; margin:0; font-weight:bold;"><a href="/products/view/<?php echo $good_data['id']?>"><?php echo $good_data['model']?></a></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="padding:0 10px;  font-size:80%; margin:0;" ><?php echo $good_data['describe']?></td>	
+			</tr>
+		</table>
+	</tr>
+	
+	<?php } ?>
+</table>
+</div>
+
+<div class="clear"></div>

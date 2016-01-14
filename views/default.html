@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?=Config::get('site_name')?></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="/js/jquery-2.2.0.min.js"></script>
+	
+	
+</head>
+<body style="background-color: grey">
+	<nav id="mainMenu" class="navbar navbar-inverse navbar-fixed-top" >
+        
+		<div class="container" style="">
+            <div class="navbar-header">
+                <a style="font-size:30px; width: 200px; padding-top:5px; color:yellow; font-weight:bold;" class="navbar-brand" href="/">
+                    <span class="glyphicon glyphicon-bookmark" aria-hidden="true" ></span>
+                    <?=Config::get('site_name')?>
+                </a>
+            </div>
+			
+			<div id="navbar" class="collapse navbar-collapse" style="min-width:800px;">
+				<ul class="nav navbar-nav">
+					<?php echo Helper::getMainMenu(); ?>
+					<li><a href="/users/login/">Log In</a></li>
+				</ul>
+				<button style="float:right; margin-top:7px;"type="button" class="btn btn-default" aria-label="Left Align">
+					<a href="/admin"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+				</button>
+			</div>
+        </div>
+    
+	</nav>
+
+    <div class="container" style="min-width:800px; width:1024px; background-color: white; border-radius:5px; height:700px; margin:20px auto;">
+        
+		<div class="starter-template" style="padding:0px 0 25px 0;">
+            <?php if( Session::hasFlash() ){ ?>
+            	<div style="margin-top:13px;" class="alert alert-info" role="alert">
+                <?php Session::flash(); ?>
+				</div>
+            <?php } ?>
+
+            <?=$data['content']?>
+        </div>
+
+    </div>
+	
+	<footer style="height:50px; background: black" >
+			<p style="color: white;">SRG</p>
+	
+	</footer>
+
+</body>
+</html>

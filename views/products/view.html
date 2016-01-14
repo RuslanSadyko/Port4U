@@ -1,0 +1,35 @@
+<h3 style="margin:0 0 10px 0; padding:5px 0 5px 40px;"><a href="/products/" style="text-decoration:none; color:black;" >All Products</a>
+<?php if( isset($_GET['category']) ) { ?>
+	<span style="font-size:16px;"><?php echo "&gt; ".ucfirst($_GET['category']);?></span>
+<?php } ?>
+
+</h3>
+
+<div id="left" style="float:left; width:190px; padding:10px; margin:0 5px;" >
+	<h5 style="margin:0; padding-bottom:10px; border-bottom:1px dotted grey; font-weight:bold;">Categories of products</h5>
+	<ul style="padding:10px 15px;">
+		<li style="disdlay: block;" ><a href="/products/index?category=notebooks">Noteboks</a></li>
+		<li><a href="/products/index?category=smartphones">Smartphones</a></li>
+		<li><a href="/products/index?category=phones">Phones</a></li>
+		<li><a href="/products/index?category=tablets">Tablets</a></li>
+		<li><a href="/products/index?category=readers">E-book Readers</a></li>
+	</ul>
+
+</div>
+
+<div id="center" style="margin:0 0 0 200px; padding:0 10px; border-left:1px solid grey;">
+
+<table width="100%" >
+	<tr>
+		<td><img src="<?php echo $data['product']['foto'];?>" style="width:300px;"/></td>
+		<td>
+			<h3><?php echo $data['product']['model'];?></h3>
+			<p>Price:<?php //echo $data['product']['price'];?></p>
+			<p>Availability:</p>
+			<p><?php echo $data['product']['describe']?></p>
+		</td>
+	</tr>
+</table>
+</div>
+
+<div class="clear"></div>

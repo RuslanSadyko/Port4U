@@ -1,0 +1,43 @@
+<div style="float: left; width:250px;">
+	<div id="page_list" style="background-color: #373737; border-radius:5px; height:160px;">
+	<ul style="margin-top:15px; padding:10px 15px;">
+		<?php foreach($data['pages'] as $page_data) { ?>
+			<li style="list-style:none; padding:3px 0;"><a href="/pages/view/<?=$page_data['alias']?>" style="font-weight:bold; text-decoration:none; color:#FFFF00;"><?=$page_data['title']?></a></li>
+		<?php } ?>
+	</ul>
+	</div>
+	<div id="credit" style="width:250px; margin-top:15px;" >
+			<img src="/img/credit-ukrsib.jpg" style="width:250px; border-radius:5px" />
+	</div>
+	
+	
+</div>
+<div style="margin-left:265px;" >
+<img src="/img/hi_xiaomi.jpg"/ style="margin:15px auto; border-radius:5px;">
+
+</div>
+<div class="clear" ></div>
+<div id="new_rel" style="border:1px dotted grey; border-radius:5px; margin-top:15px; padding:10px;" >
+		<h4 style="padding-left:15px; color:blue; font-weight:bold;" >New Releases:</h4>
+		<table style="width:100%; border-top:1px dotted grey;">
+			<?php for($i=0; $i < count($data['product']); $i++) { ?>
+			<tr>
+				<?php for( $i=0; $i<3; $i++ ){ ?> 
+					<td style="width:33%; text-align:center;" >
+						<a href="/products/view/<?php echo $data['product'][$i]['id']?>" >
+							<img src="<?php echo $data['product'][$i]['foto'];?>" style="width:200px;"/>
+						</a>
+					</td>
+				<?php } ?>
+			</tr>
+			<tr>
+				<?php for( $i=0; $i<3; $i++ ){ ?> 
+				<td style="text-align:center;">
+					<a href="/products/view/<?php echo $data['product'][$i]['id']?>" style="font-weight:bold;" ><?php echo $data['product'][$i]['shot_name'];?></a>
+				</td>
+				<?php } ?>
+			</tr>
+			
+			<?php } ?>
+		</table>
+	</div>

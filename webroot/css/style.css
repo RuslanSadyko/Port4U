@@ -1,0 +1,38 @@
+body{
+    padding-top: 50px;
+}
+
+.starter-template{
+    padding: 40px 15px;
+}
+
+form{
+    width: 400px;
+    max-width: 400px;
+}
+
+.navbar-brand{
+    font-size: 30px;
+}
+
+.mainMenu{
+	margin-bottom:0;
+}
+
+
+#navbar{
+	font-size:20px;
+}
+
+.alert{
+    width: 400px;
+    max-width: 400px;
+}
+
+.clear{
+	clear: both;
+}
+
+#page_list ul li a:hover{
+	color:#FCFFBE;
+}

@@ -1,0 +1,43 @@
+<h3>All Products</h3>
+<div style="float:left; width:200px; padding-top:20px; border-right:1px solid grey; height:1000px" >
+	<a href="#">Noteboks</a>
+
+</div>
+<div style="float:right; width:800px; margin-left:0; padding-left:0">
+<table width="100%" >
+	<?php foreach($data["goods"] as $good_data){ ?>
+	<tr style="border-bottom: 1px solid grey">
+		<table width="100%" style="border-bottom:1px solid grey">
+			<tr>
+				<td rowspan="2 "style="width:15%; text-align:center" ><a href="#"><img src="<?php echo $good_data['foto']?>" height="80" ></a><td>
+				<td style="align:left; padding:0px 10px; margin:0; font-weight:bold;"><a href="#"><?php echo $good_data['model']?></a></td>
+				<td align="right" style="width:200px" rowspan="2" >
+					<a href="/admin/products/edit/<?=$good_data['id']?>"><button class="btn btn-sm btn-primary">edit</button></a>
+					<a href="/admin/products/delete/<?=$good_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">delete</button></a>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="padding:0 10px;  font-size:80%; margin:0;" ><?php echo $good_data['describe']?></td>
+				<td></td>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</tr>
+	
+	<?php } ?>
+</table>
+<br/>
+
+<div>
+    <a href="/admin/products/add/"><button class="btn btn-sm btn-success">New Product</button></a>
+</div>
+</div>
